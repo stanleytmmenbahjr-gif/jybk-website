@@ -20,7 +20,7 @@
 
         <div class="relative bg-gray-900 p-3 rounded-2xl shadow-xl transform transition duration-500 group-hover:scale-105">
           <img
-            src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80"
+            :src="jybkImage"
             alt="JYBK"
             class="w-full h-[450px] object-cover rounded-xl"
           />
@@ -47,22 +47,22 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
 
           <div class="highlight-card">
-            🎓 AGOMA 2024  
+             AGOMA 2024  
             <span>Artist Masterclass</span>
           </div>
 
           <div class="highlight-card">
-            🏆 Celestia Awards  
+            Celestia Awards  
             <span>Emerging Artist Nominee</span>
           </div>
 
           <div class="highlight-card">
-            🎤 Cuttington University  
+             Cuttington University  
             <span>Guest Performer 2023</span>
           </div>
 
           <div class="highlight-card">
-            🌍 National Reach  
+             National Reach  
             <span>Events & Conferences</span>
           </div>
 
@@ -74,6 +74,10 @@
 
   </section>
 </template>
+
+<script setup>
+import jybkImage from '../assets/jybk.png'
+</script>
 
 <style scoped>
 /* HIGHLIGHT CARDS */

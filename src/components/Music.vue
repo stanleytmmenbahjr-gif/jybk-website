@@ -80,32 +80,33 @@ export default {
 
       music: [
         {
-          title: 'JYBK - Track One',
-          embed: 'https://audiomack.com/embed/song/YOUR-USERNAME/track-one'
+          title: 'JYBK - God Is Enough',
+          embed: 'https://audiomack.com/embed/song/kolorybk203/god-is-enough'
         },
         {
-          title: 'JYBK - Track Two',
-          embed: 'https://audiomack.com/embed/song/YOUR-USERNAME/track-two'
+          title: 'JYBK - Hosanna',
+          embed: 'https://audiomack.com/embed/song/kolorybk203/hosanna'
         },
         {
-          title: 'JYBK - Track Three',
-          embed: 'https://audiomack.com/embed/song/YOUR-USERNAME/track-three'
+          title: 'JYBK - Shine',
+          embed: 'https://audiomack.com/embed/song/kolorybk203/shine'
         }
       ],
 
       videos: [
-        {
-          title: 'Official Video 1',
-          embed: 'https://www.youtube.com/embed/YOUR_VIDEO_ID'
+         {
+          title: 'Good is Enough - Official Video',
+          embed: 'https://www.youtube.com/embed/VR_-647Bc48'
         },
+       
         {
-          title: 'Live Performance',
-          embed: 'https://www.youtube.com/embed/YOUR_VIDEO_ID'
+          title: 'Hosanna - Official Video',
+          embed: 'https://www.youtube.com/embed/unIqzp5KrKc'
         },
-
-        {
-          title: 'Behind the Scenes',
-          embed: 'https://www.youtube.com/embed/YOUR_VIDEO_ID'
+        
+         {
+          title: 'SHINE - Official Video',
+          embed: 'https://www.youtube.com/embed/d_yJaQuihto'
         }
       ]
     }

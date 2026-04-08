@@ -45,7 +45,7 @@
           href="#music"
           class="px-6 py-3 bg-yellow-400 text-black font-bold rounded-full hover:bg-yellow-500 transition shadow-lg"
         >
-          🎧 Listen Now
+          Listen Now
         </a>
 
         <!-- BOOK -->
