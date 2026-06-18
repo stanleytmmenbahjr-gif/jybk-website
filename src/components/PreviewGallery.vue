@@ -8,7 +8,7 @@
         </div>
 
         <a href="/gallery" class="text-yellow-400 font-semibold hover:underline">View more →</a>
-      </div>
+      </div>>
 
       <div class="grid grid-cols-1 sm:grid-cols-5 gap-4">
         <div v-for="(img, i) in previewImages" :key="i" class="rounded-xl overflow-hidden">
