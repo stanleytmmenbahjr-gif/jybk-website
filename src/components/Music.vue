@@ -79,6 +79,10 @@ export default {
       modules: [Navigation, Pagination, Autoplay],
 
       music: [
+        {   title: 'JYBK - Shower Me',
+          embed: 'https://audiomack.com/embed/song/theworldjybk-/shower-me'
+
+        },
         {
           title: 'JYBK - God Is Enough',
           embed: 'https://audiomack.com/embed/song/kolorybk203/god-is-enough'
@@ -94,6 +98,11 @@ export default {
       ],
 
       videos: [
+        {
+          title: 'Shower Me',
+          embed: 'https://www.youtube.com/embed/5kcHU47j_Fw'
+        },
+
          {
           title: 'Good is Enough - Official Video',
           embed: 'https://www.youtube.com/embed/VR_-647Bc48'

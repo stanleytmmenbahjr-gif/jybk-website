@@ -105,31 +105,43 @@
       <!-- RIGHT: FORM -->
       <div class="bg-gray-900 p-8 rounded-2xl shadow-lg">
 
-        <form class="flex flex-col gap-5">
+        <form @submit.prevent="submitForm" class="flex flex-col gap-5">
 
           <input
+            v-model="form.name"
             type="text"
             placeholder="Your Name"
             class="input"
+            required
           />
 
           <input
+            v-model="form.email"
             type="email"
             placeholder="Your Email"
             class="input"
+            required
           />
 
           <textarea
+            v-model="form.message"
             rows="5"
             placeholder="Your Message"
             class="input"
+            required
           ></textarea>
+
+          <!-- Status Messages -->
+          <div v-if="statusMessage" :class="['p-3 rounded text-sm', statusMessage.type === 'success' ? 'bg-green-900 text-green-100' : 'bg-red-900 text-red-100']">
+            {{ statusMessage.text }}
+          </div>
 
           <button
             type="submit"
-            class="bg-yellow-400 text-black font-bold py-3 rounded-full hover:bg-yellow-500 transition"
+            :disabled="isLoading"
+            :class="['bg-yellow-400 text-black font-bold py-3 rounded-full hover:bg-yellow-500 transition disabled:bg-gray-400 disabled:cursor-not-allowed', isLoading && 'opacity-70']"
           >
-            Send Message
+            {{ isLoading ? 'Sending...' : 'Send Message' }}
           </button>
 
         </form>
@@ -140,6 +152,66 @@
 
   </section>
 </template>
+
+<script setup>
+import { ref, onMounted } from 'vue';
+import emailjs from 'emailjs-com';
+
+const form = ref({
+  name: '',
+  email: '',
+  message: ''
+});
+
+const isLoading = ref(false);
+const statusMessage = ref(null);
+
+// Initialize EmailJS (get free account at emailjs.com)
+onMounted(() => {
+  emailjs.init('dLjLPDI1ktHKGwAuq');
+});
+
+const submitForm = async () => {
+  isLoading.value = true;
+  statusMessage.value = null;
+
+  try {
+    // Send email via EmailJS
+    const response = await emailjs.send(
+      'service_ki3cmus',
+      'template_c95tigb',
+      {
+        from_name: form.value.name,
+        from_email: form.value.email,
+        message: form.value.message,
+        to_email: 'kolorybk203@gmail.com'
+      }
+    );
+
+    if (response.status === 200) {
+      statusMessage.value = {
+        type: 'success',
+        text: 'Message sent successfully! We\'ll get back to you soon.'
+      };
+      // Reset form
+      form.value = { name: '', email: '', message: '' };
+    } else {
+      statusMessage.value = {
+        type: 'error',
+        text: 'Failed to send message. Please try again.'
+      };
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    statusMessage.value = {
+      type: 'error',
+      text: 'Failed to send message. Please try again.'
+    };
+  } finally {
+    isLoading.value = false;
+  }
+};
+</script>
 
 <style scoped>
 /* INPUT STYLE */
