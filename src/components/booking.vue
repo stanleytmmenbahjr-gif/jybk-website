@@ -29,7 +29,7 @@
           <a href="mailto:kolorybk203@gmail.com"
              class="block p-4 bg-gray-900 rounded-xl hover:bg-gray-800 transition">
             <p class="text-sm text-gray-400">Email</p>
-            <p class="font-semibold">kolorybk203@gmail.com</p>
+            <p class="font-semibold">theworldjybk26@gmail.com</p>
           </a>
 
           <!-- PHONE -->
