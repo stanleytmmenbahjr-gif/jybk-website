@@ -8,7 +8,7 @@
         </div>
 
         <a href="/gallery" class="text-yellow-400 font-semibold hover:underline">View more →</a>
-      </div>>
+      </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-5 gap-4">
         <div v-for="(img, i) in previewImages" :key="i" class="rounded-xl overflow-hidden">
@@ -20,17 +20,18 @@
 </template>
 
 <script setup>
-import img1 from '../assets/Gallery1.png'
+
 import img2 from '../assets/Gallery2.png'
 import img3 from '../assets/Gallery3.png'
-import img4 from '../assets/Gallery4.png'
 import img5 from '../assets/Gallery5.png'
+import img15 from '../assets/Gallery15.png'
+import img21 from '../assets/Gallery21.png'
 
 const previewImages = [
-  { title: 'Performaing PWAC 2026', src: img1 },
   { title: 'Performaing PWAC 2026', src: img2 },
   { title: 'Performaing Shiloh Outreach', src: img3 },
-  { title: 'Mommy ❤️', src: img4 },
+  { title: 'Ministration at Campus Fire', src: img15 },
+  { title: 'Portrait', src: img21 },
   { title: 'JYBK', src: img5 }
 ]
 </script>
