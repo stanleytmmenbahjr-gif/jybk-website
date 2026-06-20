@@ -105,11 +105,23 @@
       <!-- RIGHT: FORM -->
       <div class="bg-gray-900 p-8 rounded-2xl shadow-lg">
 
-        <form @submit.prevent="submitForm" class="flex flex-col gap-5">
+        <form
+          name="booking"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          @submit.prevent="submitForm"
+          class="flex flex-col gap-5"
+        >
+          <input type="hidden" name="form-name" value="booking" />
+          <p style="display:none">
+            <label>Don't fill this out: <input name="bot-field" /></label>
+          </p>
 
           <input
             v-model="form.name"
             type="text"
+            name="name"
             placeholder="Your Name"
             class="input"
             required
@@ -118,6 +130,7 @@
           <input
             v-model="form.email"
             type="email"
+            name="email"
             placeholder="Your Email"
             class="input"
             required
@@ -126,6 +139,7 @@
           <textarea
             v-model="form.message"
             rows="5"
+            name="message"
             placeholder="Your Message"
             class="input"
             required
@@ -154,8 +168,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import emailjs from 'emailjs-com';
+import { ref } from 'vue';
 
 const form = ref({
   name: '',
@@ -166,34 +179,29 @@ const form = ref({
 const isLoading = ref(false);
 const statusMessage = ref(null);
 
-// Initialize EmailJS (get free account at emailjs.com)
-onMounted(() => {
-  emailjs.init('dLjLPDI1ktHKGwAuq');
-});
-
 const submitForm = async () => {
   isLoading.value = true;
   statusMessage.value = null;
 
   try {
-    // Send email via EmailJS
-    const response = await emailjs.send(
-      'service_ki3cmus',
-      'template_c95tigb',
-      {
-        from_name: form.value.name,
-        from_email: form.value.email,
-        message: form.value.message,
-        to_email: 'kolorybk203@gmail.com'
-      }
-    );
+    const body = new URLSearchParams({
+      'form-name': 'booking',
+      name: form.value.name,
+      email: form.value.email,
+      message: form.value.message,
+    }).toString();
 
-    if (response.status === 200) {
+    const response = await fetch('/__forms.html', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body,
+    });
+
+    if (response.ok) {
       statusMessage.value = {
         type: 'success',
-        text: 'Message sent successfully! We\'ll get back to you soon.'
+        text: "Message sent successfully! We'll get back to you soon."
       };
-      // Reset form
       form.value = { name: '', email: '', message: '' };
     } else {
       statusMessage.value = {
