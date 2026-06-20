@@ -37,10 +37,8 @@
 </template>
 
 <script setup>
-import img1 from '../assets/Gallery1.png'
 import img2 from '../assets/Gallery2.png'
 import img3 from '../assets/Gallery3.png'
-import img4 from '../assets/Gallery4.png'
 import img5 from '../assets/Gallery5.png'
 import img6 from '../assets/Gallery6.png'
 import img7 from '../assets/Gallery7.png'
@@ -84,10 +82,10 @@ import img44 from '../assets/Gallery44.png'
 import img45 from '../assets/Gallery45.png'
 
 const images = [
-  { title: 'Performing PWAC 2026', category: 'Performance', description: 'A deep moment of Worship.', src: img1 },
   { title: 'Performing PWAC 2026', category: 'Performance', description: 'Great Moment at The Church of Pentecost.', src: img2 },
   { title: 'Performing Shiloh Outreach', category: 'Performance', description: 'Great moment with the Youth.', src: img3 },
-  { title: 'Mommy ❤️', category: 'Mom', description: 'A loving moment with her child.', src: img4 },
+  { title: 'Ministration at Campus Fire', category: 'Ministration', description: 'Students engaged in worship.', src: img15 },
+  { title: 'Portrait', category: 'Portrait', description: 'Artistic portrait from a live performance.', src: img21 },
   { title: 'JYBK', category: 'Photo', description: '.', src: img5 },
   { title: 'Shower Me Tour', category: 'Performance', description: 'Nimba University Sannquellie Series.', src: img6 },
   { title: 'Choir Performance', category: 'Choir', description: 'A choir performing in unison at Shower me series.', src: img7 },
